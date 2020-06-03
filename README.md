@@ -1,8 +1,8 @@
-#Local Library
+# Local Library
 
 The purpose of the website is to provide an online catalog for a small local library, where users can browse available books; add authors, genres, books and search on them
 
-##Setup
+## Setup
 
 1. Change the link in the _**mongoDB**_ variable of the **_app.js_** file.
 
