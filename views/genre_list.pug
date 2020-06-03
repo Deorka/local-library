@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1= title
+
+    form(style='padding-bottom: 15px;', action='/catalog/genres', method='get')
+
+        label(for="data2") Genre
+        input(type='text', name='name', value='', id='data2')
+        .form-actions
+            button.btn.btn-primary(type='submit') Search
+    ul
+    each val in list_genres
+        li
+            a(href=val.url) #{val.name}
+
+    else
+        li There are no genre.
+
+    h1
+    a(href='/catalog/genre/create') Create new genre

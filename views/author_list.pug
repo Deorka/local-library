@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1= title
+
+    form(style='padding-bottom: 15px;', action='/catalog/authors', method='get')
+        label(for="data") Full name
+        input(type='text', name='fullname', value='', id='data')
+        .form-actions
+            button.btn.btn-primary(type='submit') Search
+    ul
+        each author in author_list
+            li
+                a(href=author.url) #{author.fullname}
+                |  (#{author.date_of_birth_yyyy_mm_dd} - #{author.date_of_death_yyyy_mm_dd})
+
+        else
+            li There are no authors.
+
+        h1
+        a(href='/catalog/author/create') Create new author
